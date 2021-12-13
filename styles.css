@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+min-height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./Images/heihachi-1639387226159-4641.jpg) ;
+background-size: cover;
+
+display: flex;
+justify-content: center;
+overflow: hidden;
+}
+
+.head {
+    width: 100%;
+}
+
+.head img {
+width: 800px;
+object-fit: cover;
+box-shadow: black;
+/* position: absolute;   */
+}
+
+.middle {
+    position: relative;
+    perspective: 800px;
+    perspective-origin: top;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin-top: -50px;
+
+
+}
+
+.middleImg {
+width: 350px;
+height: 350px;
+justify-content: center;
+object-fit: cover;
+position: absolute;
+animation: carouselRotate 5s linear reverse infinite;
+}
+
+.carousel {
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    aspect-ratio: 1/1;
+    transform-origin: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: carouselRotate 5s linear infinite;
+}
+
+.item {
+    display: inline-block;
+    backface-visibility: visible;
+    object-fit: contain;
+    max-width: 150px;
+    max-height: 150px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: absolute;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.item1 {
+    transform: translatez(300px);
+    animation: item1Rotate 5s linear infinite;
+}
+
+.item2 {
+    transform: translateX(300px);
+    animation: item2Rotate 5s linear infinite;
+}
+
+.item3 {
+    transform: translateX(-300px);
+    animation: item3Rotate 5s linear infinite;
+}
+
+.item4 {
+    transform: translateZ(-300px);
+    animation: item4Rotate 5s linear infinite;
+}
+
+@keyframes carouselRotate {
+    from {
+        transform: rotatey(0);
+    }
+    to {
+        transform: rotatey(360deg)
+    }
+}
+
+@keyframes item1Rotate {
+    from {
+        transform: translateZ(300px) rotateY(0)
+    }
+    to {
+        transform: translateZ(300px) rotateY(-360deg)
+    }
+}
+
+@keyframes item2Rotate {
+    from {
+        transform: translateX(300px) rotateY(0)
+    }
+    to {
+        transform: translateX(300px) rotateY(-360deg)
+    }
+}
+
+@keyframes item3Rotate {
+    from {
+        transform: translateX(-300px) rotateY(0)
+    }
+    to {
+        transform: translateX(-300px) rotateY(-360deg)
+    }
+}
+
+@keyframes item4Rotate {
+    from {
+        transform: translateZ(-300px) rotateY(0)
+    }
+    to {
+        transform: translateZ(-300px) rotateY(-360deg)
+    }
+}
